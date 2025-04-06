@@ -24,10 +24,8 @@ export async function POST(req: NextRequest) {
 
         // Add the text prompt
         messageParts.push({
-            text: `The first image is a photo of a person. The second image is a clothing item (like a shirt or dress). Generate a realistic image of the person from the first image wearing the clothing item from the second image. 
-            Ensure the person's face, body, and identity are preserved accurately, and the clothing fits naturally on them. Do not change the person’s pose or background unless necessary.`,
+            text: "Generate a image of the user person wearing this clothing item. Maintain the person's identity and proportions accurately.",
         })
-
 
         // Add the user image
         if (userImage) {

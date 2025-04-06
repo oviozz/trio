@@ -8,8 +8,12 @@ import { ProductGrid } from "@/components/product-grid"
 import type { ProductType } from "@/types/product"
 import { Logo } from "@/components/logo"
 import { ProductSkeleton } from "@/components/product-skeleton"
+import {Camera} from "lucide-react";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
+
+    const router = useRouter();
     const [products, setProducts] = useState<ProductType[]>([])
     const [loading, setLoading] = useState(false)
     const [initialLoading, setInitialLoading] = useState(true)
@@ -69,6 +73,15 @@ export default function Home() {
         <main className="min-h-screen bg-[#F6F2EA]">
             <div className="container mx-auto px-4 max-w-5xl">
                 <Logo />
+                <div className="absolute top-4 right-4">
+                    <button
+                        onClick={() => router.push('/reverse-lens')}
+                        className="flex items-center bg-[#0A8A74] text-white px-4 py-2 rounded-lg hover:bg-[#087a66] transition-colors"
+                    >
+                        <Camera className="h-5 w-5 mr-2" />
+                        <span>Search by Image</span>
+                    </button>
+                </div>
 
                 <div className="text-center mb-5 mt-5">
                     <h1 className="text-4xl font-serif mb-2 text-center">What can I help you find? 🔍</h1>
