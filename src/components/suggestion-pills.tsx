@@ -5,15 +5,18 @@ interface SuggestionPillsProps {
 }
 
 export function SuggestionPills({ onSelectSuggestion }: SuggestionPillsProps) {
+
   const suggestions = [
-    { text: "Green hoodies", emoji: "👕" },
-    { text: "Cute summer dresses", emoji: "👗" },
-    { text: "Vintage jeans", emoji: "👖" },
-    { text: "Workout leggings", emoji: "🏃‍♀️" },
-    { text: "Casual sneakers", emoji: "👟" },
-    { text: "Formal blazers", emoji: "🧥" },
-    { text: "Cozy sweaters", emoji: "🧶" },
-    { text: "Designer bags", emoji: "👜" },
+    { text: "Trendy hoodies", emoji: "🧥" },
+    { text: "Leather jackets", emoji: "🥼" },
+    { text: "Cozy beanies", emoji: "🧢" },
+    { text: "Stylish caps", emoji: "🧢" },
+    { text: "Retro sunglasses", emoji: "🕶️" },
+    { text: "Chic handbags", emoji: "👜" },
+    { text: "Crossbody bags", emoji: "🎒" },
+    { text: "Denim vests", emoji: "👖" },
+    { text: "Bucket hats", emoji: "👒" },
+    { text: "Winter scarves", emoji: "🧣" },
   ]
 
   return (
@@ -22,7 +25,7 @@ export function SuggestionPills({ onSelectSuggestion }: SuggestionPillsProps) {
         <button
           key={index}
           onClick={() => onSelectSuggestion(suggestion.text)}
-          className="px-5 py-2.5 bg-white rounded-full text-gray-700 hover:bg-[#0A8A74] hover:text-white transition-colors text-sm font-medium border border-gray-100"
+          className="px-4 py-2.5 bg-white rounded-full text-gray-700 hover:cursor-pointer hover:scale-110 hover:bg-[#0A8A74] hover:text-white transition-colors transition-transform duration-300 text-sm font-medium border border-gray-100"
         >
           <span className="mr-2">{suggestion.emoji}</span>
           {suggestion.text}

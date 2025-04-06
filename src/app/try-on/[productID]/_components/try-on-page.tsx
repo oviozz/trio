@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import {ArrowLeft, Upload, Sparkles, Star, InfoIcon, ShoppingBag, Loader} from "lucide-react"
 import { Logo } from "@/components/logo"
 import type { ProductType } from "@/types/product"
+import {cn} from "@/lib/utils";
 
 type TryOnPageProps = {
     productID: string
@@ -252,7 +253,7 @@ export default function TryOnPageClient({ productID }: TryOnPageProps) {
                                                 <img
                                                     src={userImage || "/placeholder.svg"}
                                                     alt="Your uploaded photo"
-                                                    className="w-full h-full object-contain"
+                                                    className={cn("w-full h-full object-contain", generatingImage && "animate-pulse")}
                                                 />
                                             ) : (
                                                 <div className="text-center p-6">
