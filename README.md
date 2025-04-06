@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🧠 Inspiration
+Shopping online is convenient—but how many times have you ordered something that looked great in the photo, only to try it on and… meh 😬? Our team wanted to solve that. We wanted to create a way for people to see how a product would look before they buy, without leaving their home. That’s how Trio was born—a virtual try-on experience that helps you shop smarter and more confidently.
 
-## Getting Started
+🔧 How We Built It
+We combined some of the coolest tools and frameworks to bring Trio to life:
 
-First, run the development server:
+🧪 Next.js – used for building our fast and interactive frontend experience.
+🔥 Supabase – handled file storage and image upload, especially for user-submitted try-on images.
+🤖 Gemini API – fine-tuned for image generation. We trained it on product images to understand and simulate real-life try-on results.
+🐍 Next Server Routes – used for our backend server. It handles image processing, user requests, and interacts with the Gemini model.
+🧠 Custom Gemini Model – we fed it hundreds of product try-on images to fine-tune it to our use case. Before making a final try-on prediction, we preprocess and enhance images to match lighting, angles, and context.
+The user takes or uploads a photo, selects a product they want to try, and gets an AI-generated try-on image using our custom-tuned Gemini model. Fast, fun, and frustration-free. 😎
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+💡 What We Learned
+We dove deep into:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Image preprocessing and AI-based try-on generation
+How to work with fine-tuned AI models
+Connecting a Python Flask backend to a Next.js frontend smoothly
+Using Supabase to manage file uploads and storage with ease
+Managing fast feedback loops for real-time visual updates
+🚧 Challenges We Faced
+Image alignment: Matching the product image to the user’s body/photo took a lot of experimentation with image augmentation and pose detection.
+Model tuning: Getting our Gemini model to generate clean and realistic outputs wasn’t easy—we needed tons of sample images and careful parameter tweaking.
+Storage speed: Optimizing file upload and access time with Supabase to keep the UX smooth and snappy.
+Frontend to backend flow: Ensuring the user experience felt seamless while coordinating multiple moving parts across different tech stacks.
+🚀 What's Next?
+We plan to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add support for more product types (shoes, accessories, hats 🎩)
+Trio is all about making online shopping fun, accurate, and personalized. No more returns, no more guesswork—just try it on. ✨
