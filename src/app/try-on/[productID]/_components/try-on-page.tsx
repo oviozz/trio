@@ -37,7 +37,7 @@ export default function TryOnPageClient({ productID }: TryOnPageProps) {
 
                 // Fetch additional product details from API
                 try {
-                    const response = await fetch(`https://api.scrapingdog.com/google_product?product_id=${productID}&api_key=67f2d56b52500eaf2f2ef55b&country=us`)
+                    const response = await fetch(`https://api.scrapingdog.com/google_product?product_id=${productID}&api_key=${process.env.NEXT_PUBLIC_SCRAPEDOG_KEY}&country=us`)
                     if (response.ok) {
                         const data = await response.json()
                         setProductDetails(data)

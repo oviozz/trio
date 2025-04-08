@@ -9,8 +9,8 @@ export async function GET(request: Request) {
   }
 
   try {
-    const apiKey = "67f2d56b52500eaf2f2ef55b" // This would normally be an environment variable
-    const url = `https://api.scrapingdog.com/google_shopping?api_key=${apiKey}&query=${encodeURIComponent(query)}&country=us&language=`
+     // This would normally be an environment variable
+    const url = `https://api.scrapingdog.com/google_shopping?api_key=${process.env.NEXT_PUBLIC_SCRAPEDOG_KEY}&query=${encodeURIComponent(query)}&country=us&language=`
 
     const response = await fetch(url)
 
