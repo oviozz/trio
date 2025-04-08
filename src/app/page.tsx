@@ -11,6 +11,7 @@ import { ProductSkeleton } from "@/components/product-skeleton"
 import {Camera} from "lucide-react";
 import {useRouter} from "next/navigation";
 
+
 export default function Home() {
 
     const router = useRouter();
@@ -54,7 +55,7 @@ export default function Home() {
     useEffect(() => {
         const fetchTrendingProducts = async () => {
             try {
-                const response = await fetch("/api/search?query=trending+fashion")
+                const response = await fetch("/api/search?query=fashion+clothes")
                 if (response.ok) {
                     const data = await response.json()
                     setProducts(data.shopping_results || [])

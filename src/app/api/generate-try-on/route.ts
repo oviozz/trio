@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
         // Add the text prompt
         messageParts.push({
-            text: "Generate a image of the user person wearing this clothing item. Maintain the person's identity and proportions accurately.",
+            text: "The girl is me. Keep the same picture but just have me wearing scarves. ",
         })
 
         // Add the user image
